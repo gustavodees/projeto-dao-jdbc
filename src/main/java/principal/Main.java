@@ -12,10 +12,11 @@ import java.util.Date;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Department obj = new Department(1, "Books");
-        Seller seller = new Seller(1, "Joao", "bob@gmail.com", new Date(), 3000.0, obj);
 
-        SellerDao sellerDao = DaoFactory.createSellerDaoJDBC();
+
+      SellerDao sellerDao = DaoFactory.createSellerDao();
+
+      Seller seller = sellerDao.findById(3);
 
         System.out.println(seller);
 
