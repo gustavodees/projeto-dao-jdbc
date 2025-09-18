@@ -32,6 +32,9 @@ public class Main {
             System.out.println(s);
         }
 
-
+        System.out.println("======= Test 4: seller findById ========");
+        Seller newSeller = new Seller(null,"Pedro", "pedro@gmail.com", new Date(), 2000.0, department);
+        sellerDao.inserir(newSeller);
+        System.out.println("Inserido! ID novo = " + newSeller.getId());
     }
 }
