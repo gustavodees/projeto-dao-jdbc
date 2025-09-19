@@ -8,12 +8,13 @@ import model.dao.impl.SellerDaoJDBC;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
 
       SellerDao sellerDao = DaoFactory.createSellerDao();
       System.out.println("======= Test 1: seller findById ========");
@@ -43,6 +44,12 @@ public class Main {
        sellerDao.update(seller);
        System.out.println("Atualizado!");
 
+        System.out.println("======= Test 6: seller findById ========");
+
+        System.out.println("Digite um ID para deletar:");
+       int id = sc.nextInt();
+       sellerDao.deleteById(id);
+       System.out.println("Deletado!");
 
     }
 
